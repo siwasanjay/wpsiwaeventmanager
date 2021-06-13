@@ -21,10 +21,8 @@
 if( !defined( 'WPINC' ) ) {
 	die();
 }
-
 // Current Plugin Version
 define( 'WPSEM_VERSION', '0.0.1' );
-
 // Plugin Name
 define( 'WPSEM_NAME', 'Event Manager' );
 

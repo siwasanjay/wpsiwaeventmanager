@@ -75,7 +75,9 @@ class WPSEM_CPT {
 	        'menu_icon'			 => 'dashicons-buddicons-groups',
 	        'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'custom-fields' ),
 	        'taxonomies'         => array( 'event_type', 'post_tag' ),
-	        'show_in_rest'       => true
+	        'show_in_rest'       => true,
+	        'rest_base'          => 'wpsem-events',
+    		'rest_controller_class' => 'WP_REST_Posts_Controller',
 		);
 
 		return $args;
@@ -125,6 +127,8 @@ class WPSEM_CPT {
 		    'labels' => $tax_labels,
 		    'show_ui' => true,
 		    'show_in_rest' => true,
+	        'rest_base'             => 'wpsem-event-type',
+			'rest_controller_class' => 'WP_REST_Terms_Controller',
 		    'show_admin_column' => true,
 		    'query_var' => true,
 		    'rewrite' => array( 'slug' => 'event_type' ),
