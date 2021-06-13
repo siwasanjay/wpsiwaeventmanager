@@ -24,8 +24,29 @@ class WPSEM {
 	 *
 	 */
 	public function run() {
+		
 		// register custom post type event
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . '/admin/class-register-cpt.php';
-	}
 
+		// handel ajax calls
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . '/public/class-ajax-calls.php';
+		
+		if( ! is_admin() ) {
+			// shortcode to display for the events
+			require_once plugin_dir_path( dirname( __FILE__ ) ) . '/public/class-shortcode.php';
+
+			// shortcode with filter
+			require_once plugin_dir_path( dirname( __FILE__ ) ) . '/public/class-shortcode-filter.php';
+		} 
+		// only for admin side
+		else {
+			// metabox
+			require_once plugin_dir_path( dirname( __FILE__ ) ) . '/admin/class-metabox-schedule.php';
+
+		}
+
+		// REST API
+		// for now this is basically handeled with the parameters on the cpt registration.
+		// require_once plugin_dir_path( dirname( __FILE__ ) ) . '/includes/class-rest-api.php';
+	}
 }
