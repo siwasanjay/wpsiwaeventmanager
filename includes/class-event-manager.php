@@ -44,6 +44,8 @@ class WPSEM {
 			require_once plugin_dir_path( dirname( __FILE__ ) ) . '/admin/class-metabox-schedule.php';
 
 		}
+		
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . '/includes/class-block-slider.php';
 
 		// REST API
 		// for now this is basically handeled with the parameters on the cpt registration.
